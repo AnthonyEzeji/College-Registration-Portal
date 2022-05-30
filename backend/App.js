@@ -8,10 +8,10 @@ const https = require('https')
 const path = require('path')
 
 
-
+const db = PROCESS.ENV.db
 const LoginRoutes = require('./Routes/LoginRoutes')
 const session = require('express-session')
- mongoose.connect('mongodb+srv://AnthonyEzeji:jetpac89@cluster0.joquz.mongodb.net/systemdesign?retryWrites=true&w=majority',{useNewUrlParser: true,
+ mongoose.connect(db,{useNewUrlParser: true,
 useUnifiedTopology: true }, ()=>console.log('successfully connected to db...'))
 
 const MasterScheduleRoutes = require('./Routes/MasterScheduleRoutes')
